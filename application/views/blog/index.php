@@ -19,7 +19,6 @@
                             <th>Judul</th>
                             <th>gambar</th>
                             <th>Isi</th>
-                            <th>Detail</th>
                             <th>Aksi</th>
                             </tr>
                         </thead>
@@ -27,7 +26,6 @@
                             <?php foreach ($blog as $blogku) : ?>
                                 <tr>
                                     <td> <?php echo $blogku->judul ?></td>
-                                    <td><?php echo $blogku->isi ?></td>
                                     <td> <img src="<?php echo base_url('gambar/blog/' . $blogku->gambar) ?>" width="64" /></td>
                                     <td><?php echo $blogku->isi ?></td>
                                     <td>

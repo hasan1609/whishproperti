@@ -36,7 +36,7 @@
                      </div>
                  </div>
                  <button type="submit" class="btn btn-primary" value="upload">Tambah</button>
-
+                 <a href="<?php echo site_url('galeri/') ?>" class="btn btn-xs btn-danger">Back</a>
              </form>
          </div>
      </div>

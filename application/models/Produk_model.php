@@ -108,7 +108,7 @@ class Produk_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->id = uniqid();
+        $this->id = $post["id"];
         $this->nama = $post["nama"];
         $this->harga = $post["harga"];
         $this->alamat = $post["alamat"];
@@ -119,6 +119,7 @@ class Produk_model extends CI_Model
         $this->kamar_mandi = $post["kamar_mandi"];
         $this->garasi = $post["garasi"];
         $this->id_jenis = $post["id_jenis"];
+
         $this->tanggal_upload = date("Y-m-d");
 
         if (!empty($_FILES["gambar"]["name"])) {
@@ -165,42 +166,7 @@ class Produk_model extends CI_Model
         if ($this->upload->do_upload('gambar')) {
             return $this->upload->data("file_name");
         }
-
-        // return "default.jpg";
     }
-
-    // private function _editImage()
-    // {
-    //     $editgambar = $_FILES["gambar"]["name"];
-    //     if ($editgambar) {
-    //         $namagambar = "gambar" . time();
-    //         $config['upload_path']  = './gambar/produk/';
-    //         $config['allowed_types']  = 'jpg|jpeg|png';
-    //         $config['file_name']  = $namagambar;
-    //         $config['max_size'] = '3072';
-    //         $config['overwrite']  = 'true';
-
-    //         $this->load->library('upload', $config);
-    //         if ($this->upload->do_upload('gambar')) {
-    //             $old_image = $produk->gambar;
-    //             if ($old_image != 'default.jpg') {
-    //                 unlink(FCPATH . './gambar/produk/' . $old_image);
-    //             }
-    //             $new_image = $this->upload->data('file_name');
-    //             $this->db->set('gambar', $new_image);
-
-
-    //             // if (!empty($_FILES["gambar"]["name"])) {
-    //             //     $this->gambar = $this->_uploadImage();
-    //             // } else {
-    //             //     $this->gambar = $post["old_image"];
-    //             // }
-    //             // return "default.jpg";
-    //         } else {
-    //             echo $this->upload->dispay_errors();
-    //         }
-    //     }
-    // }
 
     private function _deleteImage($id)
     {

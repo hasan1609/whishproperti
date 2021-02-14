@@ -52,6 +52,7 @@
                          </div>
                      </div>
                      <button type="submit" class="btn btn-primary" value="Save">Submit</button>
+                     <a href="<?php echo site_url('tim/') ?>" class="btn btn-xs btn-danger">Back</a>
              </form>
          </div>
      </div>

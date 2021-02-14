@@ -48,6 +48,7 @@ class Testimoni_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
+        $this->id = $post["id"];
         $this->nama = $post["nama"];
         $this->keterangan = $post["keterangan"];
         if (!empty($_FILES["gambar"]["name"])) {

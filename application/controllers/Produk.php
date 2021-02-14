@@ -59,7 +59,7 @@ class Produk extends CI_Controller
 
     public function detail($id = null)
     {
-        $data['title'] = 'Edit Properti';
+        $data['title'] = 'Detail Properti';
 
         if (!isset($id)) redirect('produk/');
         $produk = $this->produk_model;

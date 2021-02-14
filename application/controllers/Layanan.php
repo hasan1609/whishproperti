@@ -54,6 +54,24 @@ class Layanan extends CI_Controller
         }
     }
 
+    public function view($id = null)
+    {
+        $data['title'] = 'Deatil Layanan';
+
+        if (!isset($id)) redirect('layanan/');
+        $layanan = $this->layanan_model;
+        $validasi = $this->form_validation;
+        $validasi->set_rules($layanan->rules());
+
+        $data["layanan"] = $layanan->getById($id);
+        if (!isset($id)) show_404();
+        $this->load->view('_layout/header', $data);
+        $this->load->view('_layout/sidebar', $data);
+        $this->load->view('_layout/topbar', $data);
+        $this->load->view('layanan/view', $data);
+        $this->load->view('_layout/footer');
+    }
+
     public function edit($id = null)
     {
         $data['title'] = 'Edit Layanan';

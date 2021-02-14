@@ -53,6 +53,23 @@ class Testimoni extends CI_Controller
             redirect(site_url('layanan/'));
         }
     }
+    public function view($id = null)
+    {
+        $data['title'] = 'Deatil Testimoni';
+
+        if (!isset($id)) redirect('testimoni/');
+        $testimoni = $this->testimoni_model;
+        $validasi = $this->form_validation;
+        $validasi->set_rules($testimoni->rules());
+
+        $data["testimoni"] = $testimoni->getById($id);
+        if (!isset($id)) show_404();
+        $this->load->view('_layout/header', $data);
+        $this->load->view('_layout/sidebar', $data);
+        $this->load->view('_layout/topbar', $data);
+        $this->load->view('testimoni/view', $data);
+        $this->load->view('_layout/footer');
+    }
 
     public function edit($id = null)
     {

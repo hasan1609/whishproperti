@@ -7,10 +7,6 @@ class Banner_model extends CI_Model
     public $id;
     public $deskripsi;
     public $gambar = "default.jpg";
-    public $status;
-    public $harga;
-    public $kota;
-    public $kode_pos;
 
     public function rules()
     {
@@ -18,26 +14,6 @@ class Banner_model extends CI_Model
             [
                 'field' => 'deskripsi',
                 'label' => 'Deskripsi',
-                'rules' => 'required'
-            ],
-            [
-                'field' => 'status',
-                'label' => 'Status',
-                'rules' => 'required'
-            ],
-            [
-                'field' => 'harga',
-                'label' => 'Harga',
-                'rules' => 'required'
-            ],
-            [
-                'field' => 'kota',
-                'label' => 'Kota',
-                'rules' => 'required'
-            ],
-            [
-                'field' => 'kode_pos',
-                'label' => 'Kode_pos',
                 'rules' => 'required'
             ]
         ];
@@ -58,11 +34,6 @@ class Banner_model extends CI_Model
         $post = $this->input->post();
         $this->id = uniqid();
         $this->deskripsi = $post["deskripsi"];
-        // $this->status = $post["status"];
-        // $this->harga = $post["harga"];
-        // $this->kota = $post["kota"];
-        // $this->kode_pos = $post["kode_pos"];
-        // $this->nama = $post["nama"];
         $this->gambar = $this->_uploadImage();
         $this->db->insert($this->_table, $this);
     }

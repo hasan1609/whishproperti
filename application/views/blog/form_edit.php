@@ -35,7 +35,7 @@
                  </div>
 
                  <div class="form-group">
-                     <img src="<?php echo base_url('../adminkuproperti/gambar/blog/' . $blog->gambar) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="100">
+                     <img src="<?php echo base_url('./gambar/blog/' . $blog->gambar) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="150">
                      <input type="hidden" name="old_image" value="<?php echo $blog->gambar ?>" />
                      <div class="custom-file">
                          <input type="file" class="custom-file-input  <?php echo form_error('gambar') ? 'is-invalid' : '' ?>" id="preview_gambar" name="gambar" value="<?php echo $blog->gambar ?>" onchange="prevBeritaGambar()">

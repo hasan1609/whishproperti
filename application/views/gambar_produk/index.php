@@ -31,8 +31,8 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="<?php echo site_url('galeri/detail/' . $value->id) ?>" class="btn btn-sm btn-primary"></i>Detail</a><br>
-                                        <a href="<?php echo site_url('galeri/add/' . $value->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>Tambah Gambar</a>
+                                        <a href="<?php echo site_url('galeri/add/' . $value->id) ?>" class="btn btn-sm btn-primary" style="margin-bottom: 5px;"><i class="fas fa-plus"></i>Tambah Gambar</a><br>
+                                        <a href="<?php echo site_url('galeri/detail/' . $value->id) ?>" class="btn btn-sm btn-info"></i>Detail</a>
 
                                     </td>
 

@@ -50,7 +50,7 @@
                  </div>
 
                  <div class="form-group">
-                     <img src="<?php echo base_url('../adminkuproperti/gambar/tim/' . $tim->foto) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="100">
+                     <img src="<?php echo base_url('./gambar/tim/' . $tim->foto) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="100">
                      <input type="hidden" name="old_image" value="<?php echo $tim->foto ?>" />
                      <div class="custom-file">
                          <input type="file" class="custom-file-input  <?php echo form_error('tim') ? 'is-invalid' : '' ?>" id="preview_gambar" name="foto" value="<?php echo $tim->foto ?>">
@@ -58,6 +58,7 @@
                      </div>
                  </div>
                  <button type="submit" class="btn btn-primary" value="Save">Submit</button>
+                 <a href="<?php echo site_url('tim/') ?>" class="btn btn-xs btn-danger">Back</a>
              </form>
          </div>
      </div>

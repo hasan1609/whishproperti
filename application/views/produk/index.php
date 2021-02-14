@@ -37,11 +37,11 @@
                                     <td>
                                         <a href="<?php echo site_url('produk/edit/' . $value->id) ?>" class="btn btn-sm btn-warning" style="margin: 2px;">Edit</a><br>
                                         <a href="<?php echo site_url('produk/detail/' . $value->id) ?>" class=" btn btn-sm btn-info" style="margin: 2px;">Detail</a> <br>
+                                        <a href="<?php echo site_url('produk/status/' . $value->id . '/' . $value->status) ?>" class=" btn btn-sm btn-primary" style="margin: 2px;">Terjual</a> <br>
                                         <form action="<?php echo base_url('produk/delete/' . $value->id) ?>" method="post">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" onclick="return confirm ('Apakah anda yakin ingin menghapus ?');" class="btn btn-danger">Hapus</button>
                                         </form>
-                                        <a href="<?php echo site_url('produk/status/' . $value->id . '/' . $value->status) ?>" class=" btn btn-sm btn-info" style="margin: 2px;">Detail</a> <br>
 
 
 

@@ -11,7 +11,7 @@
         <!-- General Colors-->
         <div class="col-lg-12">
             <div class="card mb-4">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <img src="<?php echo base_url('./gambar/produk/' . $produk->gambar) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="300">
                 </div>
             </div>
@@ -58,6 +58,6 @@
             </div>
         </div>
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <a href="<?php echo site_url('produk/') ?>" class="btn btn-sm btn-danger">Back</a>
+            <a href="<?php echo site_url('produk/') ?>" class="btn btn-xs btn-danger">Back</a>
         </div>
     </div>

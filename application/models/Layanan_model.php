@@ -48,6 +48,7 @@ class Layanan_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
+        $this->id = $post["id"];
         $this->judul = $post["judul"];
         $this->deskripsi = $post["deskripsi"];
         if (!empty($_FILES["logo"]["name"])) {

@@ -19,7 +19,6 @@
                             <th>Nama</th>
                             <th>Telepon</th>
                             <th>Email</th>
-                            <th>Deskripsi</th>
                             <th>foto</th>
                             <th>Detail</th>
                             </tr>
@@ -30,7 +29,6 @@
                                     <td> <?php echo $timku->nama ?></td>
                                     <td><?php echo $timku->telepon ?></td>
                                     <td><?php echo $timku->email ?></td>
-                                    <td><?php echo $timku->deskripsi ?></td>
                                     <td> <img src="<?php echo base_url('gambar/tim/' . $timku->foto) ?>" width="64" /></td>
                                     <td>
                                         <a href="<?php echo site_url('tim/edit/' . $timku->id) ?>" class="btn btn-sm btn-warning" style="margin: 2px;">Edit</a><br>

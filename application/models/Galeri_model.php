@@ -37,36 +37,6 @@ class Galeri_model extends CI_Model
         return $query->result();
     }
 
-    // public function save($data)
-    // {
-    //     $this->db->insert('galeri', $data);
-    // $post = $this->input->post();
-    // $this->gambar = $this->_uploadImage();
-    // $this->id = $post["id"];
-    // $this->id_galeri = $post["id_gambar"];
-
-    // $this->db->insert($this->_table2, $this);
-    // }
-
-
-    private function _uploadImage()
-    {
-        $namagambar = "isi" . time();
-        $config['upload_path']  = './gambar/produk/isi';
-        $config['allowed_types']  = 'jpg|jpeg|png';
-        $config['file_name']  = $namagambar;
-        $config['max_size'] = '3072';
-        $config['overwrite']  = 'true';
-
-        $this->load->library('upload', $config);
-
-        if ($this->upload->do_upload('gambar')) {
-            return $this->upload->data("file_name");
-        }
-
-        // return "default.jpg";
-    }
-
     public function cekData()
     {
         $this->db->limit(1);
@@ -79,8 +49,21 @@ class Galeri_model extends CI_Model
         $this->db->insert_batch('galeri', $insert);
     }
 
-    // public function insertGalery($data)
-    // {
-    //     return $this->db->table($this->table)->insert($data);
-    // }
+    public function getById($id)
+    {
+        return $this->db->get_where($this->_table2, ["id_galeri" => $id])->row();
+    }
+    public function delete($id)
+    {
+        $this->_deleteImage($id);
+        return $this->db->delete($this->_table2, array("id_galeri" => $id));
+    }
+    private function _deleteImage($id)
+    {
+        $gambar = $this->getById($id);
+        if ($gambar->gambar != "default.jpg") {
+            $filename = explode(".", $gambar->gambar)[0];
+            return array_map('unlink', glob(FCPATH . "./gambar/produk/isi/$filename.*"));
+        }
+    }
 }

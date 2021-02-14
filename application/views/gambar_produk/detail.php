@@ -12,14 +12,19 @@
      <!-- Form Basic -->
      <div class="card mb-3">
          <div class="card-body">
+             <a href="<?php echo site_url('galeri/') ?>" class="btn btn-xs btn-warning">Back</a>
              <div class="row text-center">
                  <?php foreach ($galeri as $key => $value) : ?>
                      <div class="col-lg-4">
                          <div class="card-body">
                              <div class="form-group">
-                                 <img src="<?php echo base_url('gambar/' . $value->gambar) ?>" height="200px" width="300px" />
+                                 <img src="<?php echo base_url('gambar/produk/isi/' . $value->gambar) ?>" height="200px" width="300px" />
                              </div>
-                             <a href="<?php echo site_url('galeri/delete/' . $value->id_galeri) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> <span>Hapus</span></a><br>
+                             <form action="<?php echo base_url('galeri/delete/' . $value->id_galeri) ?>" method="post">
+                                 <input type="hidden" name="_method" value="DELETE">
+                                 <button type="submit" onclick="return confirm ('Apakah anda yakin ingin menghapus ?');" class="btn btn-danger"><i class="fas fa-trash"></i>Hapus</button>
+
+                             </form>
                          </div>
                      </div>
                  <?php endforeach; ?>

@@ -44,6 +44,23 @@ class Tim extends CI_Controller
             redirect(site_url('tim/'));
         }
     }
+    public function view($id = null)
+    {
+        $data['title'] = 'Deatil Tim';
+
+        if (!isset($id)) redirect('tim/');
+        $tim = $this->tim_model;
+        $validasi = $this->form_validation;
+        $validasi->set_rules($tim->rules());
+
+        $data["tim"] = $tim->getById($id);
+        if (!isset($id)) show_404();
+        $this->load->view('_layout/header', $data);
+        $this->load->view('_layout/sidebar', $data);
+        $this->load->view('_layout/topbar', $data);
+        $this->load->view('tim/view', $data);
+        $this->load->view('_layout/footer');
+    }
 
     public function delete($id = null)
     {

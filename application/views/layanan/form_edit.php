@@ -29,7 +29,7 @@
                      <?php echo form_error('judul') ?>
                  </div>
                  <div class="form-group">
-                     <img src="<?php echo base_url('../adminkuproperti/gambar/layanan/' . $layanan->logo) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="100">
+                     <img src="<?php echo base_url('./gambar/layanan/' . $layanan->logo) ?>" class="img-thumbnail img-preview" style="margin: 5px;" width="100">
                      <input type="hidden" name="old_image" value="<?php echo $layanan->logo ?>" />
                      <div class="custom-file">
                          <input type="file" class="custom-file-input  <?php echo form_error('logo') ? 'is-invalid' : '' ?>" id="preview_gambar" name="logo" value="<?php echo $layanan->logo ?>" onchange="prevBeritaGambar()">
@@ -41,6 +41,8 @@
                      <textarea class="ckeditor <?php echo form_error('dekripsi') ? 'is-invalid' : '' ?>" name="deskripsi" rows="3"><?php echo $layanan->deskripsi ?></textarea>
                  </div>
                  <button type="submit" class="btn btn-primary" value="Update">Submit</button>
+                 <a href="<?php echo site_url('layanan/') ?>" class="btn btn-xs btn-danger">Back</a>
+
              </form>
          </div>
      </div>
